@@ -21,21 +21,21 @@ LXC_ROOTFS_SIZE="32"
 LXC_ROOTFS_STORAGE="local-zfs"
 
 # Defines the size in GB your LXC container's filesystem shared by Zamba (AD member & standalone) (default: 100)
-LXC_SHAREFS_SIZE="100"
+LXC_SHAREFS_SIZE="10"
 # Defines the Proxmox storage where your LXC container's filesystem shared by Zamba will be generated (default: local-zfs)
 LXC_SHAREFS_STORAGE="local-zfs"
 # Defines the mountpoint of the filesystem shared by Zamba inside your LXC container (default: tank)
 # Moved to constants-service.conf, be careful if you override this value
-# LXC_SHAREFS_MOUNTPOINT="tank"
+LXC_SHAREFS_MOUNTPOINT="tank"
 
 # cpu core count (default: 0 = unlimited)
 LXC_THREADS=0
 
 # Defines the amount of RAM in MB your LXC container is allowed to use (default: 1024)
-LXC_MEM=1024
+LXC_MEM=128
 
 # Defines the amount of swap space in MB your LXC container is allowed to use (default: 1024)
-LXC_SWAP=1024
+LXC_SWAP=64
 
 # Defines the hostname of your LXC container
 LXC_HOSTNAME="${service}"
@@ -44,7 +44,7 @@ LXC_HOSTNAME="${service}"
 LXC_DOMAIN="zmb.rocks"
 
 # Enable DHCP on LAN (eth0) - (Obtain an IP address automatically) [true/false]
-LXC_DHCP=false
+LXC_DHCP=true
 
 # Defines the local IP address and subnet of your LXC container in CIDR format
 LXC_IP="192.168.100.200/24"
